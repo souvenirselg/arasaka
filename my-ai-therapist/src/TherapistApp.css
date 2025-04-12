@@ -1,0 +1,124 @@
+/* App Grid Layout */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Two-column responsive layout */
+  @media (min-width: 768px) {
+    .app-container {
+      flex-direction: row;
+    }
+  }
+  
+  /* Video Section */
+  .video-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .webcam {
+    border-radius: 1rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .emotion-text {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  /* Chat Section */
+  .chat-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .messages {
+    overflow-y: auto;
+    max-height: 60vh;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  .card.user {
+    border-left: 4px solid #3b82f6;
+  }
+  
+  .card.bot {
+    border-left: 4px solid #10b981;
+  }
+  
+  .card-content .sender {
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  /* Centered Input */
+  .input-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+  
+  .input-box {
+    flex-grow: 1;
+    max-width: 500px;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .send-button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .send-button:hover {
+    background-color: #2563eb;
+  }
+  
+  .send-button:disabled {
+    background-color: #93c5fd;
+    cursor: not-allowed;
+  }
+  

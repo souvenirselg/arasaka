@@ -1,0 +1,17 @@
+from transformers import GPT2Tokenizer, GPT2LMHeadModel
+import torch
+import math
+
+tokenizer = GPT2Tokenizer.from_pretrained("gpt2")
+model = GPT2LMHeadModel.from_pretrained("fine_tuned_gpt2_psychologist")
+model.eval()
+
+def calculate_perplexity(text):
+    encodings = tokenizer(text, return_tensors="pt")
+    input_ids = encodings.input_ids
+    with torch.no_grad():
+        outputs = model(input_ids, labels=input_ids)
+        loss = outputs.loss
+        return math.exp(loss.item())
+
+print("Perplexity:", calculate_perplexity("I understand you're feeling overwhelmed."))
